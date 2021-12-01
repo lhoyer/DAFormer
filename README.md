@@ -1,6 +1,7 @@
 ## DAFormer: Improving Network Architectures and Training Strategies for Domain-Adaptive Semantic Segmentation
 
-**[[Arxiv Paper]]()**
+**[[Arxiv]](https://arxiv.org/abs/2111.14887)**
+**[[Paper]](https://arxiv.org/pdf/2111.14887.pdf)**
 
 As acquiring pixel-wise annotations of real-world images for semantic
 segmentation is a costly process, a model can instead be trained with more
@@ -34,7 +35,8 @@ validation set.
 ![Demo](resources/demo.gif)
 ![Color Palette](resources/color_palette.png)
 
-For more information on DAFormer, please check our [[Paper]]().
+For more information on DAFormer, please check our
+[[Paper]](https://arxiv.org/pdf/2111.14887.pdf).
 
 If you find this project useful in your research, please consider citing:
 
@@ -42,7 +44,7 @@ If you find this project useful in your research, please consider citing:
 @article{hoyer2021daformer,
   title={DAFormer: Improving Network Architectures and Training Strategies for Domain-Adaptive Semantic Segmentation},
   author={Hoyer, Lukas and Dai, Dengxin and Van Gool, Luc},
-  journal={arXiv preprint},
+  journal={arXiv preprint arXiv:2111.14887},
   year={2021}
 }
 ```
