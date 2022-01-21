@@ -93,6 +93,8 @@ class UDADataset(object):
                 # mmcv.print_log(f'{j}: {n_class}', 'mmseg')
                 if n_class > self.rcs_min_pixels * self.rcs_min_crop_ratio:
                     break
+                f1 = np.random.choice(self.samples_with_class[c])
+                i1 = self.file_to_idx[f1]
                 s1 = self.source[i1]
         i2 = np.random.choice(range(len(self.target)))
         s2 = self.target[i2]
