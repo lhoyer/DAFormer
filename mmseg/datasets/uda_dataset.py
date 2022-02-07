@@ -93,6 +93,10 @@ class UDADataset(object):
                 # mmcv.print_log(f'{j}: {n_class}', 'mmseg')
                 if n_class > self.rcs_min_pixels * self.rcs_min_crop_ratio:
                     break
+                # Sample a new random crop from source image i1.
+                # Please note, that self.source.__getitem__(idx) applies the
+                # preprocessing pipeline to the loaded image, which includes
+                # RandomCrop, and results in a new crop of the image.
                 s1 = self.source[i1]
         i2 = np.random.choice(range(len(self.target)))
         s2 = self.target[i2]
