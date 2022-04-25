@@ -183,6 +183,13 @@ Similarly, also other models can be tested after the training has finished:
 sh test.sh path/to/checkpoint_directory
 ```
 
+When evaluating a model trained on Synthia->Cityscapes, please note that the 
+evaluation script calculates the mIoU for all 19 Cityscapes classes. However, 
+Synthia contains only labels for 16 of these classes. Therefore, it is a common
+practice in UDA to report the mIoU for Synthia->Cityscapes only on these 16 
+classes. As the Iou for the 3 missing classes is 0, you can do the conversion 
+mIoU16 = mIoU19 * 19 / 16.
+
 ## Framework Structure
 
 This project is based on [mmsegmentation version 0.16.0](https://github.com/open-mmlab/mmsegmentation/tree/v0.16.0).
