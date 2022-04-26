@@ -153,7 +153,7 @@ component ablations, ...), we use a system to automatically generate
 and train the configs:
 
 ```shell
-python run_experimenty.py --exp <ID>
+python run_experiments.py --exp <ID>
 ```
 
 More information about the available experiments and their assigned IDs, can be
