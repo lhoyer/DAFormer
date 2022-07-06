@@ -7,6 +7,8 @@
 
 :bell: We are happy to announce that DAFormer was accepted at **CVPR22**. :bell:
 
+:bell: We are happy to announce that our follow-up work [HRDA](https://github.com/lhoyer/HRDA) on high-resolution UDA was accepted at **ECCV22**. :bell:
+
 ## Overview
 
 As acquiring pixel-wise annotations of real-world images for semantic
