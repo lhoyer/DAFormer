@@ -50,9 +50,10 @@ If you find this project useful in your research, please consider citing:
 
 ```
 @InProceedings{hoyer2022daformer,
-  title={DAFormer: Improving Network Architectures and Training Strategies for Domain-Adaptive Semantic Segmentation},
+  title={{DAFormer}: Improving Network Architectures and Training Strategies for Domain-Adaptive Semantic Segmentation},
   author={Hoyer, Lukas and Dai, Dengxin and Van Gool, Luc},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages={9924--9935},
   year={2022}
 }
 ```
