@@ -58,6 +58,31 @@ If you find this project useful in your research, please consider citing:
 }
 ```
 
+## Comparison with State of the Art
+
+|                     | GTA→Cityscapes | Synthia→Cityscapes | Cityscapes→ACDC | Cityscapes→DarkZurich |
+|---------------------|----------------|--------------------|-----------------|-----------------------|
+| ADVENT [1]          | 45.5           | 41.2               | 32.7            | 29.7                  |
+| BDL [2]             | 48.5           | --                 | 37.7            | 30.8                  |
+| FDA [3]             | 50.5           | --                 | 45.7            | --                    |
+| DACS [4]            | 52.1           | 48.3               | --              | --                    |
+| ProDA [5]           | 57.5           | 55.5               | --              | --                    |
+| MGCDA [6]           | --             | --                 | 48.7            | 42.5                  |
+| DANNet [7]          | --             | --                 | 50.0            | 45.2                  |
+| **DAFormer (Ours)** | **68.3**       | **60.9**           | **55.4***       | **53.8***             |
+
+&ast; New results obtained after CVPR'22 publication of DAFormer
+
+References:
+
+1. Vu et al. "Advent: Adversarial entropy minimization for domain adaptation in semantic segmentation" in CVPR 2019.
+2. Li et al. "Bidirectional learning for domain adaptation of semantic segmentation" in CVPR 2019.
+3. Yang et al. "Fda: Fourier domain adaptation for semantic segmentation" in CVPR 2020.
+4. Tranheden et al. "Dacs: Domain adaptation via crossdomain mixed sampling" in WACV 2021.
+5. Zhang et al. "Prototypical pseudo label denoising and target structure learning for domain adaptive semantic segmentation" in CVPR 2021.
+6. Sakaridis et al. "Map-guided curriculum domain adaptation and uncertaintyaware evaluation for semantic nighttime image segmentation" in TPAMI, 2020.
+7. Wu et al. "DANNet: A one-stage domain adaptation network for unsupervised nighttime semantic segmentation" in CVPR, 2021.
+
 ## Setup Environment
 
 For this project, we used python 3.8.5. We recommend setting up a new virtual
@@ -107,8 +132,25 @@ and extract them to `data/cityscapes`.
 [here](https://download.visinf.tu-darmstadt.de/data/from_games/) and extract
 them to `data/gta`.
 
-**Synthia:** Please, download SYNTHIA-RAND-CITYSCAPES from
+**Synthia (Optional):** Please, download SYNTHIA-RAND-CITYSCAPES from
 [here](http://synthia-dataset.net/downloads/) and extract it to `data/synthia`.
+
+**ACDC (Optional):** Please, download rgb_anon_trainvaltest.zip and
+gt_trainval.zip from [here](https://acdc.vision.ee.ethz.ch/download) and
+extract them to `data/acdc`. Further, please restructure the folders from
+`condition/split/sequence/` to `split/` using the following commands:
+
+```shell
+rsync -a data/acdc/rgb_anon/*/train/*/* data/acdc/rgb_anon/train/
+rsync -a data/acdc/rgb_anon/*/val/*/* data/acdc/rgb_anon/val/
+rsync -a data/acdc/gt/*/train/*/*_labelTrainIds.png data/acdc/gt/train/
+rsync -a data/acdc/gt/*/val/*/*_labelTrainIds.png data/acdc/gt/val/
+```
+
+**Dark Zurich (Optional):** Please, download the Dark_Zurich_train_anon.zip
+and Dark_Zurich_val_anon.zip from
+[here](https://www.trace.ethz.ch/publications/2019/GCMA_UIoU/) and extract it
+to `data/dark_zurich`.
 
 The final folder structure should look like this:
 
@@ -116,6 +158,13 @@ The final folder structure should look like this:
 DAFormer
 ├── ...
 ├── data
+│   ├── acdc (optional)
+│   │   ├── gt
+│   │   │   ├── train
+│   │   │   ├── val
+│   │   ├── rgb_anon
+│   │   │   ├── train
+│   │   │   ├── val
 │   ├── cityscapes
 │   │   ├── leftImg8bit
 │   │   │   ├── train
@@ -123,10 +172,16 @@ DAFormer
 │   │   ├── gtFine
 │   │   │   ├── train
 │   │   │   ├── val
+│   ├── dark_zurich (optional)
+│   │   ├── gt
+│   │   │   ├── val
+│   │   ├── rgb_anon
+│   │   │   ├── train
+│   │   │   ├── val
 │   ├── gta
 │   │   ├── images
 │   │   ├── labels
-│   ├── synthia
+│   ├── synthia (optional)
 │   │   ├── RGB
 │   │   ├── GT
 │   │   │   ├── LABELS

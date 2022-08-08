@@ -201,7 +201,8 @@ def generate_experiment_cfgs(id):
             cfg['name'] += f'_s{seed}'
         cfg['name'] = cfg['name'].replace('.', '').replace('True', 'T') \
             .replace('False', 'F').replace('cityscapes', 'cs') \
-            .replace('synthia', 'syn')
+            .replace('synthia', 'syn') \
+            .replace('darkzurich', 'dzur')
         return cfg
 
     # -------------------------------------------------------------------------
@@ -364,6 +365,23 @@ def generate_experiment_cfgs(id):
         datasets = [
             # ('gta', 'cityscapes'),  # already run in exp 6
             ('synthia', 'cityscapes'),
+        ]
+        architecture, backbone = ('daformer_sepaspp', 'mitb5')
+        uda = 'dacs_a999_fdthings'
+        rcs_T = 0.01
+        plcrop = True
+        for (source, target), seed in \
+                itertools.product(datasets, seeds):
+            cfg = config_from_vars()
+            cfgs.append(cfg)
+    # -------------------------------------------------------------------------
+    # Further Datasets
+    # -------------------------------------------------------------------------
+    elif id == 8:
+        seeds = [0, 1, 2]
+        datasets = [
+            ('cityscapes', 'acdc'),
+            ('cityscapes', 'darkzurich'),
         ]
         architecture, backbone = ('daformer_sepaspp', 'mitb5')
         uda = 'dacs_a999_fdthings'

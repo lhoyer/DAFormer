@@ -31,11 +31,12 @@ class CityscapesDataset(CustomDataset):
                [255, 0, 0], [0, 0, 142], [0, 0, 70], [0, 60, 100],
                [0, 80, 100], [0, 0, 230], [119, 11, 32]]
 
-    def __init__(self, **kwargs):
+    def __init__(self,
+                 img_suffix='_leftImg8bit.png',
+                 seg_map_suffix='_gtFine_labelTrainIds.png',
+                 **kwargs):
         super(CityscapesDataset, self).__init__(
-            img_suffix='_leftImg8bit.png',
-            seg_map_suffix='_gtFine_labelTrainIds.png',
-            **kwargs)
+            img_suffix=img_suffix, seg_map_suffix=seg_map_suffix, **kwargs)
 
     @staticmethod
     def _convert_to_label_id(result):
@@ -80,8 +81,11 @@ class CityscapesDataset(CustomDataset):
             output = Image.fromarray(result.astype(np.uint8)).convert('P')
             import cityscapesscripts.helpers.labels as CSLabels
             palette = np.zeros((len(CSLabels.id2label), 3), dtype=np.uint8)
-            for label_id, label in CSLabels.id2label.items():
-                palette[label_id] = label.color
+            if to_label_id:
+                for label_id, label in CSLabels.id2label.items():
+                    palette[label_id] = label.color
+            else:
+                palette = np.array(self.PALETTE, dtype=np.uint8)
 
             output.putpalette(palette)
             output.save(png_filename)

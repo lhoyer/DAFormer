@@ -37,6 +37,10 @@ def parse_args():
         '--aug-test', action='store_true', help='Use Flip and Multi scale aug')
     parser.add_argument('--out', help='output result file in pickle format')
     parser.add_argument(
+        '--test-set',
+        action='store_true',
+        help='Run inference on the test set')
+    parser.add_argument(
         '--format-only',
         action='store_true',
         help='Format the output results without perform evaluation. It is'
@@ -113,6 +117,11 @@ def main():
         cfg.data.test.pipeline[1].flip = True
     cfg.model.pretrained = None
     cfg.data.test.test_mode = True
+
+    if args.test_set:
+        for k in cfg.data.test:
+            if isinstance(cfg.data.test[k], str):
+                cfg.data.test[k] = cfg.data.test[k].replace('val', 'test')
 
     # init distributed env first, since logger depends on the dist info.
     if args.launcher == 'none':
