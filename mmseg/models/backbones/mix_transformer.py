@@ -4,6 +4,8 @@
 #
 # This work is licensed under the NVIDIA Source Code License
 # ---------------------------------------------------------------
+# A copy of the license is available at resources/license_segformer
+
 import math
 import warnings
 from functools import partial

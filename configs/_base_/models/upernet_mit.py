@@ -1,3 +1,9 @@
+# Obtained from: https://github.com/open-mmlab/mmsegmentation/tree/v0.16.0
+# Modifications:
+# - BN instead of SyncBN
+# - Removed auxiliary decoder
+# - Replace ResNet encoder with MiT encoder
+
 # model settings
 norm_cfg = dict(type='BN', requires_grad=True)
 find_unused_parameters = True

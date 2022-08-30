@@ -1,3 +1,8 @@
+# ---------------------------------------------------------------
+# Copyright (c) 2021-2022 ETH Zurich, Lukas Hoyer. All rights reserved.
+# Licensed under the Apache License, Version 2.0
+# ---------------------------------------------------------------
+
 _base_ = ['deeplabv2_r50-d8.py']
 # Previous UDA methods only use the dilation rates 6 and 12 for DeepLabV2.
 # This might be a bit hidden as it is caused by a return statement WITHIN

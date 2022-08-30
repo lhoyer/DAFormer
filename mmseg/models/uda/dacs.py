@@ -1,5 +1,12 @@
-# The ema model and the domain-mixing are based on:
+# ---------------------------------------------------------------
+# Copyright (c) 2021-2022 ETH Zurich, Lukas Hoyer. All rights reserved.
+# Licensed under the Apache License, Version 2.0
+# ---------------------------------------------------------------
+
+# The ema model update and the domain-mixing are based on:
 # https://github.com/vikolss/DACS
+# Copyright (c) 2020 vikolss. Licensed under the MIT License.
+# A copy of the license is available at resources/license_dacs
 
 import math
 import os

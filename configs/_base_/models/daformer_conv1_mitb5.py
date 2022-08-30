@@ -1,3 +1,8 @@
+# ---------------------------------------------------------------
+# Copyright (c) 2021-2022 ETH Zurich, Lukas Hoyer. All rights reserved.
+# Licensed under the Apache License, Version 2.0
+# ---------------------------------------------------------------
+
 # This is the same as SegFormer but with 256 embed_dims
 # SegF. with C_e=256 in Tab. 7
 

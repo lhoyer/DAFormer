@@ -1,3 +1,5 @@
+# Obtained from: https://github.com/open-mmlab/mmsegmentation/tree/v0.16.0
+
 from .compose import Compose
 from .formating import (Collect, ImageToTensor, ToDataContainer, ToTensor,
                         Transpose, to_tensor)
