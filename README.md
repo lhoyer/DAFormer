@@ -273,7 +273,7 @@ seeds, we provide the checkpoint with the median validation performance here.
 * [DAFormer for GTA→Cityscapes](https://drive.google.com/file/d/1pG3kDClZDGwp1vSTEXmTchkGHmnLQNdP/view?usp=sharing)
 * [DAFormer for Synthia→Cityscapes](https://drive.google.com/file/d/1V9EpoTePjGq33B8MfombxEEcq9a2rBEt/view?usp=sharing)
 * [DAFormer for Cityscapes→ACDC](https://drive.google.com/file/d/16RSBkzJbGprWr04LjyNleqRzRZgCaEBn/view?usp=sharing)
-* [DAFormer for Cityscapes→DarkZurich](https://drive.google.com/file/d/1z4QyN6HG2XYPJ8v4n_rdvXR7--tIcC9Y/view?usp=sharing)
+* [DAFormer for Cityscapes→DarkZurich](https://drive.google.com/file/d/1_VXKDhnp4x4sslBj5B8tqqBJXeOuI9hS/view?usp=sharing)
 
 The checkpoints come with the training logs. Please note that:
 
