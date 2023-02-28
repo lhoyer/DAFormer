@@ -9,6 +9,9 @@
 
 :bell: We are happy to announce that our follow-up work [HRDA](https://github.com/lhoyer/HRDA) on high-resolution UDA was accepted at **ECCV22**. :bell:
 
+:bell: We are happy to announce that our follow-up work [MIC](https://github.com/lhoyer/MIC) on context-enhanced UDA was accepted at **CVPR23**. :bell:
+
+
 ## Overview
 
 As acquiring pixel-wise annotations of real-world images for semantic
