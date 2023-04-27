@@ -2,8 +2,8 @@
 
 **by [Lukas Hoyer](https://lhoyer.github.io/), [Dengxin Dai](https://vas.mpi-inf.mpg.de/dengxin/), and [Luc Van Gool](https://scholar.google.de/citations?user=TwMib_QAAAAJ&hl=en)**
 
-**[[Arxiv]](https://arxiv.org/abs/2111.14887)**
-**[[Paper]](https://arxiv.org/pdf/2111.14887.pdf)**
+**[[CVPR22 Paper]](https://arxiv.org/pdf/2111.14887.pdf)**
+**[[Extension Paper]](https://arxiv.org/pdf/2304.13615.pdf)**
 
 :bell: We are happy to announce that DAFormer was accepted at **CVPR22**. :bell:
 
@@ -11,6 +11,7 @@
 
 :bell: We are happy to announce that our follow-up work [MIC](https://github.com/lhoyer/MIC) on context-enhanced UDA was accepted at **CVPR23**. :bell:
 
+:bell: We further extend DAFormer to domain generalization and clear-to-adverse-weather UDA in the **[[Extension Paper]](https://arxiv.org/pdf/2304.13615.pdf)**. :bell:
 
 ## Overview
 
@@ -46,8 +47,12 @@ validation set.
 ![Demo](resources/demo.gif)
 ![Color Palette](resources/color_palette.png)
 
+DAFormer can be further **extended to domain generalization** lifting the requirement
+of access to target images. Also in domain generalization,
+DAFormer significantly improves the state-of-the-art performance by **+6.5 mIoU**.
+
 For more information on DAFormer, please check our
-[[Paper]](https://arxiv.org/pdf/2111.14887.pdf).
+[[CVPR Paper]](https://arxiv.org/pdf/2111.14887.pdf) and the [[Extension Paper]](https://arxiv.org/pdf/2304.13615.pdf).
 
 If you find this project useful in your research, please consider citing:
 
@@ -59,9 +64,16 @@ If you find this project useful in your research, please consider citing:
   pages={9924--9935},
   year={2022}
 }
+
+@Article{hoyer2023domain,
+  title={Domain Adaptive and Generalizable Network Architectures and Training Strategies for Semantic Image Segmentation},
+  author={Hoyer, Lukas and Dai, Dengxin and Van Gool, Luc},
+  journal={arXiv preprint arXiv:2304.13615},
+  year={2023}
+}
 ```
 
-## Comparison with State of the Art
+## Comparison with State-of-the-Art UDA
 
 DAFormer significantly outperforms previous works on several UDA benchmarks.
 This includes synthetic-to-real adaptation on GTA→Cityscapes and
@@ -79,7 +91,7 @@ Cityscapes→ACDC and Cityscapes→DarkZurich.
 | DANNet [7]          | --             | --                 | 50.0            | 45.2                  |
 | **DAFormer (Ours)** | **68.3**       | **60.9**           | **55.4***       | **53.8***             |
 
-&ast; New results obtained after CVPR'22 publication of DAFormer
+&ast; New results of our [extension paper](https://arxiv.org/pdf/2304.13615.pdf)
 
 References:
 
@@ -90,6 +102,29 @@ References:
 5. Zhang et al. "Prototypical pseudo label denoising and target structure learning for domain adaptive semantic segmentation" in CVPR 2021.
 6. Sakaridis et al. "Map-guided curriculum domain adaptation and uncertaintyaware evaluation for semantic nighttime image segmentation" in TPAMI, 2020.
 7. Wu et al. "DANNet: A one-stage domain adaptation network for unsupervised nighttime semantic segmentation" in CVPR, 2021.
+
+## Comparison with State-of-the-Art Domain Generalization (DG)
+
+DAFormer significantly outperforms previous works on domain generalization from GTA to real street scenes.
+
+| DG Method       | Cityscapes     | BDD100K        | Mapillary        | Avg.           |
+|-----------------|----------------|----------------|------------------|----------------|
+| IBN-Net [1,5]   | 37.37          | 34.21          | 36.81            | 36.13          |
+| DRPC [2]        | 42.53          | 38.72          | 38.05            | 39.77          |
+| ISW [3,5]       | 37.20          | 33.36          | 35.57            | 35.38          |
+| SAN-SAW [4]     | 45.33          | 41.18          | 40.77            | 42.43          |
+| SHADE [5]       | 46.66          | 43.66          | 45.50            | 45.27          |
+| DAFormer (Ours) | 52.65&ast;     | 47.89&ast;     | 54.66&ast;       | 51.73&ast;     |
+
+&ast; New results of our [extension paper](https://arxiv.org/pdf/2304.13615.pdf)
+
+References:
+
+1. Pan et al. "Two at once: Enhancing learning and generalization capacities via IBN-Net" in ECCV, 2018.
+2. Yue et al. "Domain randomization and pyramid consistency: Simulation-to-real generalization without accessing target domain data" ICCV, 2019.
+3. Choi et al. "RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening" in CVPR, 2021.
+4. Peng et al. "Semantic-aware domain generalized segmentation" in CVPR, 2022.
+5. Zhao et al. "Style-Hallucinated Dual Consistency Learning for Domain Generalized Semantic Segmentation" in ECCV, 2022.
 
 ## Setup Environment
 
@@ -267,6 +302,11 @@ python -m tools.test path/to/config_file path/to/checkpoint_file --test-set --fo
 The predictions can be submitted to the public evaluation server of the
 respective dataset to obtain the test score.
 
+## Domain Generalization
+
+For the domain generalization extension of DAFormer, please refer to
+the DG branch of the HRDA repository: [https://github.com/lhoyer/HRDA/tree/dg](https://github.com/lhoyer/HRDA/tree/dg)
+
 ## Checkpoints
 
 Below, we provide checkpoints of DAFormer for different benchmarks.
@@ -277,6 +317,7 @@ seeds, we provide the checkpoint with the median validation performance here.
 * [DAFormer for Synthia→Cityscapes](https://drive.google.com/file/d/1V9EpoTePjGq33B8MfombxEEcq9a2rBEt/view?usp=sharing)
 * [DAFormer for Cityscapes→ACDC](https://drive.google.com/file/d/16RSBkzJbGprWr04LjyNleqRzRZgCaEBn/view?usp=sharing)
 * [DAFormer for Cityscapes→DarkZurich](https://drive.google.com/file/d/1_VXKDhnp4x4sslBj5B8tqqBJXeOuI9hS/view?usp=sharing)
+* [DAFormer for GTA Domain Generalization](https://drive.google.com/file/d/1up9x3R3HtU_MjM6F89xNIHzPbIqBSacx/view?usp=sharing)
 
 The checkpoints come with the training logs. Please note that:
 
