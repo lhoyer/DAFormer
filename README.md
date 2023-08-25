@@ -5,13 +5,13 @@
 **[[CVPR22 Paper]](https://arxiv.org/pdf/2111.14887.pdf)**
 **[[Extension Paper]](https://arxiv.org/pdf/2304.13615.pdf)**
 
-:bell: We are happy to announce that DAFormer was accepted at **CVPR22**. :bell:
+:bell: **News:**
 
-:bell: We are happy to announce that our follow-up work [HRDA](https://github.com/lhoyer/HRDA) on high-resolution UDA was accepted at **ECCV22**. :bell:
-
-:bell: We are happy to announce that our follow-up work [MIC](https://github.com/lhoyer/MIC) on context-enhanced UDA was accepted at **CVPR23**. :bell:
-
-:bell: We further extend DAFormer to domain generalization and clear-to-adverse-weather UDA in the **[[Extension Paper]](https://arxiv.org/pdf/2304.13615.pdf)**. :bell:
+* [2023-08-25] We are happy to announce that our follow-up work [EDAPS](https://github.com/susaha/edaps) on panoptic segmentation UDA was accepted at **ICCV23**.
+* [2023-04-23] We further extend DAFormer to domain generalization and clear-to-adverse-weather UDA in the **[[Extension Paper]](https://arxiv.org/pdf/2304.13615.pdf)**.
+* [2023-02-28] We are happy to announce that our follow-up work [MIC](https://github.com/lhoyer/MIC) on context-enhanced UDA was accepted at **CVPR23**.
+* [2022-07-06] We are happy to announce that our follow-up work [HRDA](https://github.com/lhoyer/HRDA) on high-resolution UDA was accepted at **ECCV22**.
+* [2022-03-09] We are happy to announce that DAFormer was accepted at **CVPR22**.
 
 ## Overview
 
