@@ -144,20 +144,15 @@ pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable
 pip install mmcv-full==1.3.7  # requires the other packages to be installed first
 ```
 
-Further, please download the MiT weights and a pretrained DAFormer using the
-following script. If problems occur with the automatic download, please follow
-the instructions for a manual download within the script.
+Please, download the MiT ImageNet weights (b3-b5) provided by [SegFormer](https://github.com/NVlabs/SegFormer?tab=readme-ov-file#training)
+from their [OneDrive](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/xieenze_connect_hku_hk/EvOn3l1WyM5JpnMQFSEO5b8B7vrHw9kDaJGII-3N9KNhrg?e=cpydzZ) and put them in the folder `pretrained/`.
+Further, download the checkpoint of [DAFormer on GTA→Cityscapes](https://drive.google.com/file/d/1pG3kDClZDGwp1vSTEXmTchkGHmnLQNdP/view?usp=sharing) and extract it to the folder `work_dirs/`.
 
-```shell
-sh tools/download_checkpoints.sh
-```
-
-All experiments were executed on a NVIDIA RTX 2080 Ti.
+All experiments were executed on an NVIDIA RTX 2080 Ti.
 
 ## Inference Demo
 
-Already as this point, the provided DAFormer model (downloaded by
-`tools/download_checkpoints.sh`) can be applied to a demo image:
+Already as this point, the provided DAFormer model can be applied to a demo image:
 
 ```shell
 python -m demo.image_demo demo/demo.png work_dirs/211108_1622_gta2cs_daformer_s0_7f24c/211108_1622_gta2cs_daformer_s0_7f24c.json work_dirs/211108_1622_gta2cs_daformer_s0_7f24c/latest.pth
