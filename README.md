@@ -66,11 +66,15 @@ If you find this project useful in your research, please consider citing:
   year={2022}
 }
 
-@Article{hoyer2023domain,
+@Article{hoyer2024domain,
   title={Domain Adaptive and Generalizable Network Architectures and Training Strategies for Semantic Image Segmentation},
   author={Hoyer, Lukas and Dai, Dengxin and Van Gool, Luc},
-  journal={arXiv preprint arXiv:2304.13615},
-  year={2023}
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence (PAMI)}, 
+  year={2024},
+  volume={46},
+  number={1},
+  pages={220-235},
+  doi={10.1109/TPAMI.2023.3320613}}
 }
 ```
 
