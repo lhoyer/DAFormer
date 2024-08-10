@@ -7,6 +7,8 @@
 
 :bell: **News:**
 
+* [2024-07-03] We are happy to announce that our work [SemiVL](https://github.com/google-research/semivl) on semi-supervised semantic segmentation with vision-language guidance was accepted at **ECCV24**.
+* [2024-07-03] We are happy to announce that our follow-up work [DGInStyle](https://dginstyle.github.io/) on image diffusion for domain-generalizable semantic segmentation was accepted at **ECCV24**.
 * [2023-09-26] We are happy to announce that our [Extension Paper](https://arxiv.org/pdf/2304.13615.pdf) on domain generalization and clear-to-adverse-weather UDA was accapted at **PAMI**. 
 * [2023-08-25] We are happy to announce that our follow-up work [EDAPS](https://github.com/susaha/edaps) on panoptic segmentation UDA was accepted at **ICCV23**.
 * [2023-04-23] We further extend DAFormer to domain generalization and clear-to-adverse-weather UDA in the [Extension Paper](https://arxiv.org/pdf/2304.13615.pdf).
